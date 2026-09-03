@@ -1,0 +1,77 @@
+/* BARRA FLUTUANTE DE COOKIES */
+.caixa-cookies {
+    position: fixed;
+    bottom: -100px; /* Começa escondida para fazer o efeito de subir */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 850px;
+    background: rgba(11, 5, 24, 0.9) !important; /* Roxo ultra escuro com transparência */
+    border: 1px solid #3b0764 !important; /* Borda roxa escura */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8) !important;
+    padding: 20px 30px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    z-index: 999999; /* Garante que fica na frente de absolutamente tudo */
+    transition: bottom 0.5s ease-in-out; /* Efeito suave de subida */
+    font-family: sans-serif;
+    backdrop-filter: blur(10px); /* Efeito de vidro borrado atrás */
+}
+
+/* Quando o script ativar, a barra sobe para a tela */
+.caixa-cookies.mostrar {
+    bottom: 25px;
+}
+
+/* Bloco do texto */
+.cookies-texto {
+    color: #e2e8f0 !important;
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cookies-texto a {
+    color: #c084fc !important; /* Link lilás */
+    text-decoration: underline;
+}
+
+/* Botão de aceitar roxo neon */
+.btn-aceitar-cookies {
+    background: linear-gradient(90deg, #3b0764, #6d28d9) !important;
+    color: #ffffff !important;
+    border: 1px solid #7c3aed !important;
+    padding: 12px 28px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap; /* Evita que o texto quebre em duas linhas */
+    box-shadow: 0 4px 15px rgba(109, 40, 217, 0.3) !important;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.btn-aceitar-cookies:hover {
+    filter: brightness(1.2) !important;
+    transform: scale(1.03);
+}
+
+/* Responsivo para celulares */
+@media (max-width: 600px) {
+    .caixa-cookies {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        bottom: -200px;
+        gap: 15px;
+    }
+    .caixa-cookies.mostrar {
+        bottom: 15px;
+    }
+    .btn-aceitar-cookies {
+        width: 100%;
+    }
+}

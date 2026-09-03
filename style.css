@@ -1,0 +1,285 @@
+/* RESET PADRÃO */
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0a1128;
+    color: #ffffff;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #001f54;
+    border-bottom: 3px solid #00b4d8;
+    position: sticky; top: 0; z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 20px;
+}
+
+.logo { font-size: 26px; font-weight: bold; color: #ffffff; }
+.logo span { color: #ff9100; }
+.location-selector { color: #90e0ef; font-size: 14px; cursor: pointer; margin-left: 15px; display: inline-block; }
+.menu-links a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px; margin-right: 20px; }
+.menu-links a:hover { color: #ff9100; }
+
+.btn-entrar {
+    background-color: #ff9100; color: #ffffff; border: none;
+    padding: 8px 20px; font-weight: bold; border-radius: 6px; cursor: pointer;
+    transition: background 0.2s;
+}
+
+/* HERO BANNER */
+.hero-banner {
+    height: 240px;
+    background: linear-gradient(to bottom, rgba(10, 17, 40, 0.3), #0a1128), url('https://unsplash.com') no-repeat center/cover;
+    display: flex; align-items: flex-end; padding: 40px;
+}
+.hero-content { max-width: 1200px; margin: 0 auto; width: 100%; }
+.hero-content h2 { font-size: 34px; margin-bottom: 5px; color: #ff9100; }
+
+/* FILTROS POR GÊNERO */
+.filter-wrapper { background-color: #00153a; padding: 15px 0; border-bottom: 1px solid #003566; }
+.filter-container { max-width: 1200px; margin: 0 auto; display: flex; gap: 12px; padding: 0 20px; overflow-x: auto; }
+.btn-filter {
+    background-color: #003566; color: #ffffff; border: 1px solid #00b4d8;
+    padding: 8px 16px; font-size: 14px; font-weight: 600; border-radius: 20px;
+    cursor: pointer; transition: all 0.2s ease; white-space: nowrap;
+}
+.btn-filter:hover { background-color: #ff9100; border-color: #ff9100; }
+.btn-filter.active { background-color: #ff9100; border-color: #ff9100; box-shadow: 0 0 10px rgba(255, 145, 0, 0.4); }
+
+/* GRID FILMES */
+.content-wrapper { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+.movie-section { margin-bottom: 50px; }
+.section-title { font-size: 22px; margin-bottom: 20px; color: #00b4d8; }
+.movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
+
+.movie-card {
+    background-color: #001f54; border-radius: 8px; overflow: hidden;
+    border: 1px solid #003566; transition: transform 0.2s;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+.movie-card:hover { transform: scale(1.04); border-color: #ff9100; }
+.movie-poster {
+    width: 100%; height: 260px; background-color: #003566;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 15px; font-size: 14px; color: #90e0ef;
+}
+.movie-card img { width: 100%; height: 260px; object-fit: cover; }
+.movie-info { padding: 12px; }
+.movie-info h3 { font-size: 14px; margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tag-classificacao { background-color: #00b4d8; color: white; padding: 2px 6px; font-size: 11px; font-weight: bold; border-radius: 4px; }
+.btn-comprar {
+    width: 100%; background-color: #ff9100; color: white; border: none;
+    padding: 8px; font-weight: bold; border-radius: 4px; cursor: pointer; margin-top: 10px;
+}
+
+/* MODAL DE DETALHES */
+.modal-cinema {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); display: none;
+    justify-content: center; align-items: center; z-index: 300; padding: 20px;
+}
+.modal-cinema-content {
+    background-color: #001f54; border: 2px solid #ff9100; border-radius: 12px;
+    padding: 30px; max-width: 600px; width: 100%; position: relative;
+    max-height: 85vh; overflow-y: auto; text-align: left;
+}
+.movie-detail-title { color: #ff9100; font-size: 24px; margin-bottom: 15px; }
+.close-cinema, .close-modal { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: white; }
+.movie-specs { background-color: #003566; padding: 15px; border-radius: 8px; margin-bottom: 15px; font-size: 14px; line-height: 1.5;}
+.movie-synopsis h3, .movie-cinemas-section h3 { font-size: 16px; color: #00b4d8; margin: 15px 0 8px 0; border-bottom: 1px solid #003566; padding-bottom: 4px;}
+.movie-synopsis p { font-size: 14px; color: #e2eafc; line-height: 1.5; }
+
+/* LINHAS DE CINEMAS */
+.cinema-row-item {
+    background: #003566; padding: 12px; border-radius: 6px; margin-bottom: 8px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.cinema-name { font-weight: bold; color: #ffffff; font-size: 14px; }
+.cinema-hours { font-size: 12px; color: #90e0ef; margin-top: 3px; }
+.cinema-price { color: #ff9100; font-weight: bold; font-size: 15px; }
+
+/* =================================================================
+   JANELA DE LOGIN (ESTILO DIVERTIDAMENTE 2)
+   ================================================================= */
+.register-modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    display: none; z-index: 200;
+}
+
+.modal-bg-overlay {
+    width: 100%; height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('https://unsplash.com') no-repeat center/cover;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.register-box {
+    background-color: rgba(22, 28, 39, 0.95);
+    border: 1px solid #2d3748; padding: 40px; border-radius: 16px;
+    width: 390px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); text-align: center;
+}
+
+.register-box h3 { color: #ffffff; font-size: 22px; margin-bottom: 6px; font-weight: 700; }
+.register-box .subtitle { color: #94a3b8; font-size: 14px; margin-bottom: 25px; }
+.register-form input {
+    width: 100%; padding: 15px; margin-bottom: 16px; background-color: #ffffff;
+    border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; color: #000000; outline: none;
+}
+.register-form input::placeholder { color: #64748b; }
+
+.btn-submit {
+    width: 100%; padding: 15px; background-color: #4f46e5; color: #ffffff;
+    border: none; border-radius: 30px; font-weight: bold; font-size: 15px; cursor: pointer; margin-top: 10px;
+}
+.btn-submit:hover { background-color: #4338ca; }
+.divider { text-align: center; margin: 20px 0; font-size: 12px; color: #64748b; }
+
+.btn-google {
+    width: 100%; padding: 12px; background: transparent; border: 1px solid #475569;
+    color: #ffffff; border-radius: 6px; font-size: 14px; font-weight: 600;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.g-icon { color: #ef4444; font-weight: bold; font-size: 16px; }
+/* =================================================================
+   TEMA COMPLETO: CINEPRIME ROXO ESCURO E PRETO
+   ================================================================= */
+
+/* O SITE TODO: Fundo preto profundo e textos brancos */
+html, body {
+    background-color: #050508 !important; /* Preto puro cinematográfico */
+    color: #ffffff !important;
+}
+
+/* O TOPO DO SITE: Mistura de roxo escuro com preto */
+header, .header, .navbar {
+    background: linear-gradient(180deg, #120424 0%, #050508 100%) !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid #2e1065 !important; /* Linha roxa bem escura e discreta */
+}
+
+/* Links do menu do topo */
+header a, .header a, .navbar a {
+    color: #e9d5ff !important; /* Texto lilás bem clarinho */
+    transition: color 0.2s;
+}
+header a:hover, .header a:hover, .navbar a:hover {
+    color: #c084fc !important; /* Roxo brilhante ao passar o mouse */
+}
+
+/* CARDS DOS FILMES: Fundo roxo extremamente escuro (quase preto) para dar profundidade */
+.movie-card, .card {
+    background-color: #0b0518 !important; 
+    border: 1px solid #1e0b36 !important; /* Borda roxa escura */
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* BOTÕES DE "VER DETALHES" E COMPRA: Degradê roxo escuro para roxo neon */
+.btn-comprar, .btn-detalhes, .movie-info button {
+    background: linear-gradient(90deg, #3b0764, #6d28d9) !important;
+    color: #ffffff !important;
+    border: 1px solid #7c3aed !important;
+    border-radius: 8px !important;
+    font-weight: bold !important;
+    box-shadow: 0 2px 10px rgba(109, 40, 217, 0.3) !important;
+    transition: filter 0.2s, transform 0.2s !important;
+}
+.btn-comprar:hover, .btn-detalhes:hover, .movie-info button:hover {
+    filter: brightness(1.2) !important;
+    transform: scale(1.02) !important;
+}
+
+/* BOTÃO DE LOGIN DO TOPO: Acompanha o tema roxo */
+#open-login {
+    background-color: #2e1065 !important;
+    color: #ffffff !important;
+    border: 1px solid #581c9c !important;
+}
+#open-login:hover {
+    background-color: #4c1d95 !important;
+}
+
+/* BOTÕES DE FILTROS DO CATÁLOGO (.btn-filter) */
+.btn-filter {
+    background-color: #0f0822 !important;
+    color: #a78bfa !important;
+    border: 1px solid #2e1065 !important;
+}
+.btn-filter.active, .btn-filter:hover {
+    background-color: #581c9c !important;
+    color: #ffffff !important;
+    border-color: #7c3aed !important;
+}
+
+/* JANELA FLUTUANTE (MODAL AZUL DO SEU PRINT): Mudando para Roxo e Preto */
+#booking-modal, .modal-content, #booking-modal .modal-body {
+    background-color: #07020d !important; /* Fundo do modal quase preto */
+    border: 2px solid #4c1d95 !important; /* Borda roxa destacada */
+    color: #ffffff !important;
+}
+
+/* Caixa interna de especificações do filme dentro do modal */
+#booking-modal .info-box, #booking-modal div[style*="background"] {
+    background-color: #120524 !important; /* Roxo bem escuro de fundo */
+    border: 1px solid #2e1065 !important;
+}
+/* =================================================================
+   INTERAÇÃO PREMIUM: EFEITO GLOW ROXO NOS CARDS
+   ================================================================= */
+
+/* Prepara os cards para terem animações suaves */
+.movie-card, .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Efeito ativado instantaneamente quando passa o mouse por cima do filme */
+.movie-card:hover, .card:hover {
+    transform: translateY(-10px) !important; /* Faz o filme subir levemente */
+    box-shadow: 0 10px 30px rgba(109, 40, 217, 0.5) !important; /* Cria um brilho roxo neon em volta */
+    border-color: #7c3aed !important; /* Acende a bordinha do card com roxo vivo */
+}
+/* =================================================================
+   ESTILO DA BARRA DE PESQUISA (TEMA ROXO E PRETO)
+   ================================================================= */
+.busca-container {
+    max-width: 1200px;
+    margin: 30px auto 10px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+#input-busca-filme {
+    width: 100%;
+    background-color: #0b0518; /* Fundo roxo escuro */
+    border: 2px solid #1e0b36;  /* Borda roxa discreta */
+    border-radius: 8px;
+    padding: 14px 20px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Quando clica na barra para digitar, ela brilha em roxo */
+#input-busca-filme:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
+}
+
+#input-busca-filme::placeholder {
+    color: #a78bfa; /* Texto de exemplo em lilás */
+    opacity: 0.6;
+}
+
+
+
+

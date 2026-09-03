@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePrime - Nossos Cinemas</title>
+    <!-- Reaproveita os estilos principais do seu portal -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #050508;
+            color: #ffffff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container-cinemas {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .titulo-pagina {
+            color: #c084fc;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(109, 40, 217, 0.5);
+        }
+        .subtitulo-pagina {
+            color: #a78bfa;
+            margin-bottom: 40px;
+        }
+        .grid-redes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .card-cinema {
+            background-color: #0b0518;
+            border: 1px solid #1e0b36;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        }
+        .card-cinema h3 {
+            color: #ffffff;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+        .card-cinema p {
+            color: #a0aec0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .btn-voltar {
+            display: inline-block;
+            background: linear-gradient(90deg, #3b0764, #6d28d9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            border: 1px solid #7c3aed;
+        }
+        .tag-recurso {
+            display: inline-block;
+            background-color: #1e0b36;
+            color: #c084fc;
+            padding: 4px 8px;
+            font-size: 11px;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-cinemas">
+        <a href="index.html" class="btn-voltar">⬅ Voltar para a Home</a>
+        
+        <h1 class="titulo-pagina">Redes de Cinemas Parceiras</h1>
+        <p class="subtitulo-pagina">Encontre a sala do CinePrime mais próxima de você.</p>
+
+        <div class="grid-redes">
+            <div class="card-cinema">
+                <h3>UCI Anália Franco</h3>
+                <p>📍 Av. Reg. Feijó, 1739 - Tatuapé, São Paulo - SP</p>
+                <p>Equipado com poltronas VIP reclináveis e som de última geração para máxima imersão nos blockbusters.</p>
+                <span class="tag-recurso">IMAX</span>
+                <span class="tag-recurso">VIP</span>
+                <span class="tag-recurso">3D</span>
+            </div>
+
+            <div class="card-cinema">
+                <h3>Cinemark Paulista</h3>
+                <p>📍 Av. Paulista, 1230 - Bela Vista, São Paulo - SP</p>
+                <p>O melhor cinema da região central, com bomboniere premium e salasXD com telas gigantes de parede a parede.</p>
+                <span class="tag-recurso">SALA XD</span>
+                <span class="tag-recurso">D-BOX</span>
+            </div>
+
+            <div class="card-cinema">
+                <h3>Cinemark Tatuapé</h3>
+                <p>📍 Av. Radial Leste, s/n - Tatuapé, São Paulo - SP</p>
+                <p>Localizado dentro do Shopping Metrô Tatuapé, com acesso fácil e salas confortáveis para toda a família.</p>
+                <span class="tag-recurso">CONFORTO</span>
+                <span class="tag-recurso">3D</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

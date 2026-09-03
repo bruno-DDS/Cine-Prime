@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePrime - Login & Cadastro</title>
+    <style>
+        body {
+            background-color: #050508;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #0b0518;
+            border: 1px solid #1e0b36;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        .logo-prime {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #e50914;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        .logo-prime span { color: #ffcc00; }
+
+        .abas-botoes {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #1e0b36;
+            padding-bottom: 10px;
+        }
+
+        .btn-aba {
+            flex: 1;
+            background: none;
+            border: none;
+            color: #a78bfa;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 10px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .btn-aba.active {
+            color: #ffffff;
+            border-bottom: 2px solid #7c3aed;
+        }
+
+        .form-box {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-box.active {
+            display: flex;
+        }
+
+        .campo-grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .campo-grupo label {
+            font-size: 13px;
+            color: #cbd5e1;
+            font-weight: bold;
+        }
+
+        .campo-grupo input {
+            background-color: #050508;
+            border: 1px solid #2e1065;
+            padding: 12px;
+            border-radius: 6px;
+            color: white;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .campo-grupo input:focus {
+            border-color: #7c3aed;
+            box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-acao {
+            background: linear-gradient(90deg, #3b0764, #6d28d9);
+            color: white;
+            border: 1px solid #7c3aed;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: filter 0.2s;
+        }
+
+        .btn-acao:hover {
+            filter: brightness(1.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="logo-prime">CINE<span>PRIME</span></div>
+        
+        <div class="abas-botoes">
+            <button class="btn-aba active" onclick="mudarAba('login')">Entrar</button>
+            <button class="btn-aba" onclick="mudarAba('cadastro')">Criar Conta</button>
+        </div>
+
+        <!-- FORMULÁRIO DE LOGIN -->
+        <form id="form-login" class="form-box active">
+            <div class="campo-grupo">
+                <label for="login-usuario">👤 Usuário:</label>
+                <input type="text" id="login-usuario" placeholder="Digite seu usuário..." required>
+            </div>
+            <div class="campo-grupo">
+                <label for="login-senha">🔒 Senha:</label>
+                <input type="password" id="login-senha" placeholder="Digite sua senha..." required>
+            </div>
+            <button type="submit" class="btn-acao">Acessar Portal</button>
+        </form>
+
+        <!-- FORMULÁRIO DE CADASTRO -->
+        <form id="form-cadastro" class="form-box">
+            <div class="campo-grupo">
+                <label for="cad-nome">📛 Seu Nome Completo:</label>
+                <input type="text" id="cad-nome" placeholder="Ex: João Silva" required>
+            </div>
+            <div class="campo-grupo">
+                <label for="cad-usuario">👤 Crie um Usuário:</label>
+                <input type="text" id="cad-usuario" placeholder="Ex: joao123" required>
+            </div>
+            <div class="campo-grupo">
+                <label for="cad-senha">🔒 Crie uma Senha:</label>
+                <input type="password" id="cad-senha" placeholder="Mínimo 4 caracteres" minlength="4" required>
+            </div>
+            <button type="submit" class="btn-acao">Finalizar Cadastro</button>
+        </form>
+    </div>
+
+    <script>
+        // Função para alternar entre as abas de entrar e cadastrar
+        function mudarAba(tipo) {
+            const btnAbas = document.querySelectorAll('.btn-aba');
+            const formLogin = document.getElementById('form-login');
+            const formCadastro = document.getElementById('form-cadastro');
+
+            btnAbas[0].classList.toggle('active', tipo === 'login');
+            btnAbas[1].classList.toggle('active', tipo === 'cadastro');
+            
+            formLogin.classList.toggle('active', tipo === 'login');
+            formCadastro.classList.toggle('active', tipo === 'cadastro');
+        }
+
+        // --- LÓGICA DE LOGIN ---
+        document.getElementById('form-login').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const usuarioInput = document.getElementById('login-usuario').value.trim();
+            const senhaInput = document.getElementById('login-senha').value;
+
+            // 1. REGRA DO ADMINISTRADOR: Se digitar adm e 123, vai direto pro painel financeiro
+            if (usuarioInput.toLowerCase() === 'adm' && senhaInput === '123') {
+                localStorage.setItem("usuarioLogado", "Administrador");
+                alert("🔓 Acesso ADM liberado! Redirecionando para o painel...");
+                window.location.href = "painel-adm.html";
+                return;
+            }
+
+            // 2. REGRA DO CLIENTE COMUM: Busca as contas salvas no navegador
+            const usuariosCadastrados = JSON.parse(localStorage.getItem("CinePrime_Contas")) || [];
+            const contaEncontrada = usuariosCadastrados.find(u => u.usuario.toLowerCase() === usuarioInput.toLowerCase() && u.senha === senhaInput);
+
+            if (contaEncontrada) {
+                // Salva na memória que o usuário comum está logado para o seu app.js ler
+                localStorage.setItem("usuarioLogado", contaEncontrada.nome);
+                alert(`🍿 Bem-vindo de volta, ${contaEncontrada.nome.split(' ')[0]}!`);
+                window.location.href = "index.html"; // Joga o cliente comum para a home de filmes
+            } else {
+                alert("❌ Usuário ou senha incorretos! Tente novamente.");
+            }
+        });
+
+        // --- LÓGICA DE CADASTRO ---
+        document.getElementById('form-cadastro').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nome = document.getElementById('cad-nome').value.trim();
+            const usuario = document.getElementById('cad-usuario').value.trim();
+            const senha = document.getElementById('cad-senha').value;
+
+            // Evita que um usuário crie uma conta com o nome 'adm'
+            if (usuario.toLowerCase() === 'adm') {
+                alert("⚠ Este nome de usuário é reservado ao sistema!");
+                return;
+            }
+
+            let usuariosCadastrados = JSON.parse(localStorage.getItem("CinePrime_Contas")) || [];
+
+            // Evita cadastrar usuários repetidos
+            const usuarioJaExiste = usuariosCadastrados.some(u => u.usuario.toLowerCase() === usuario.toLowerCase());
+            if (usuarioJaExiste) {
+                alert("❌ Este nome de usuário já está sendo usado! Escolha outro.");
+                return;
+            }
+
+            // Cria o objeto e salva no banco de dados local
+            const novaConta = { nome, usuario, senha };
+            usuariosCadastrados.push(novaConta);
+            localStorage.setItem("CinePrime_Contas", JSON.stringify(usuariosCadastrados));
+
+            alert("🎉 Conta criada com sucesso! Agora você já pode fazer login.");
+            mudarAba('login'); // Joga o usuário de volta para a tela de login
+            document.getElementById('login-usuario').value = usuario; // Já preenche o campo para facilitar
+        });
+    </script>
+</body>
+</html>

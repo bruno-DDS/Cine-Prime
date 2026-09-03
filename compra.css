@@ -1,0 +1,190 @@
+body {
+    background-color: #050508;
+    color: #ffffff;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.compra-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.btn-voltar-home {
+    display: inline-block;
+    background-color: #0b0518;
+    color: #c084fc;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #1e0b36;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.titulo-compra {
+    color: #c084fc;
+    margin: 0 0 5px 0;
+}
+
+.subtitulo-compra {
+    color: #a78bfa;
+    margin: 0 0 40px 0;
+}
+
+.fluxo-compra-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+@media (max-width: 800px) {
+    .fluxo-compra-grid { grid-template-columns: 1fr; }
+}
+
+/* Formulário */
+.form-dados {
+    background-color: #0b0518;
+    border: 1px solid #1e0b36;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-grupo label {
+    font-weight: bold;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.campo-grupo select, .campo-grupo input {
+    background-color: #050508;
+    border: 1px solid #2e1065;
+    padding: 12px;
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.campo-grupo select:focus, .campo-grupo input:focus {
+    border-color: #7c3aed;
+}
+
+.aviso-classificacao {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Resumo */
+.resumo-valores {
+    border-top: 1px dashed #2e1065;
+    padding-top: 15px;
+}
+
+.resumo-valores h3 { margin: 0 0 10px 0; color: #c084fc; }
+
+.preco-total {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.btn-finalizar-compra {
+    background: linear-gradient(90deg, #3b0764, #6d28d9);
+    color: white;
+    border: 1px solid #7c3aed;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Sala de Cinema e Assentos */
+.mapa-sala-cinema {
+    background-color: #0b0518;
+    border: 1px solid #1e0b36;
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tela-cinema {
+    width: 80%;
+    background-color: #2e1065;
+    color: #c084fc;
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+
+.grid-assentos {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.assento {
+    width: 32px;
+    height: 32px;
+    background-color: #232d40;
+    border-radius: 6px 6px 0 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 4px solid #1a2333;
+}
+
+.assento:hover { background-color: #4c1d95; }
+
+.assento.selecionado {
+    background-color: #7c3aed;
+    border-bottom-color: #5b21b6;
+}
+
+.assento.ocupado {
+    background-color: #ef4444;
+    border-bottom-color: #b91c1c;
+    cursor: not-allowed;
+}
+
+.legenda-assentos {
+    display: flex;
+    gap: 20px;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.assento-exemplo {
+    width: 16px;
+    height: 16px;
+    background-color: #232d40;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.assento-exemplo.selecionado { background-color: #7c3aed; }
+.assento-exemplo.ocupado { background-color: #ef4444; }

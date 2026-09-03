@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePrime - Seu Guia de Cinema</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rodape.css">
+    <link rel="stylesheet" href="cookies.css">
+</head>
+<body>
+
+    <!-- NAV BAR SUPERIOR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">🎬 Cine<span>Prime</span></div>
+                <div class="location-selector">📍 São Paulo ▾</div>
+            </div>
+            <nav class="menu-links">
+                <a href="#">FILMES</a>
+                <a href="#">CINEMAS</a>
+                <a href="#">PREÇOS</a>
+                <a href="#">PROMOÇÕES</a>
+            </nav>
+            <div class="nav-right">
+            <a href="login-portal.html" class="btn-entrar" id="open-login" style="text-decoration: none; display: inline-block; text-align: center; line-height: normal;">Fazer Login</a>
+            
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- BARRA DE FILTROS POR GÊNERO -->
+        
+
+        <!-- BANNER DE DESTAQUE GRANDE -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h2>Bem-vindo ao CinePrime</h2>
+                <p>Descubra informações, elencos, cinemas parceiros e garanta seus ingressos.</p>
+            </div>
+        </section>
+
+        <!-- CONTAINER PRINCIPAL DE FILMES -->
+        <div class="content-wrapper">
+            <!-- BARRA DE PESQUISA DE FILMES -->
+            <div class="busca-container">
+                <input type="text" id="input-busca-filme" placeholder="🔍 Digite o nome de um filme para buscar...">
+            </div>
+            
+            <!-- SEÇÃO: EM CARTAZ -->
+            <section class="movie-section" id="section-em-cartaz">
+                <h2 class="section-title">Em Cartaz <span>▸</span></h2>
+                <div class="movie-grid" id="grid-em-cartaz"></div>
+            </section>
+
+            <!-- SEÇÃO: EM BREVE -->
+            <section class="movie-section" id="section-em-breve">
+                <h2 class="section-title">Em Breve <span>▸</span></h2>
+                <div class="movie-grid" id="grid-em-breve"></div>
+            </section>
+
+            <!-- SEÇÃO: EM ALTA -->
+            <section class="movie-section" id="section-em-alta">
+                <h2 class="section-title">Em Alta <span>▸</span></h2>
+                <div class="movie-grid" id="grid-em-alta"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- MODAL DE DETALHES COMPLETOS COM COMPONENTES DE VÍDEO LOCAL -->
+    <div id="booking-modal" class="modal-cinema">
+        <div class="modal-cinema-content">
+            <span class="close-cinema" id="close-cinema">&times;</span>
+            <h2 id="info-title" class="movie-detail-title">Nome do Filme</h2>
+            
+            <div class="movie-specs">
+                <p><strong>🎭 Gênero:</strong> <span id="info-genre">-</span></p>
+                <p><strong>⏳ Duração:</strong> <span id="info-runtime">-</span></p>
+                <p><strong>⭐ Nota IMDb:</strong> <span id="info-rating">-</span></p>
+                <p><strong>🎬 Diretor:</strong> <span id="info-director">-</span></p>
+                <p><strong>👥 Elenco Principal:</strong> <span id="info-actors">-</span></p>
+            </div>
+
+            <!-- BOTÃO DE VER TRAILER -->
+            <button id="btn-ver-trailer" class="btn-comprar" style="margin-bottom: 20px; background-color: #ff3b30;">🎬 Ver Trailer Oficial</button>
+
+            <!-- CONTAINER DO VÍDEO LOCAL -->
+           <!-- Cole este novo lugar no espaço acima: -->
+ <!-- SUBSTITUA O BLOCO DO TRAILER POR ESTE AQUI: -->
+<!-- COLOQUE ESTE BLOCO ORIGINAL DE VOLTA NO SEU INDEX.HTML -->
+<div id="trailer-container" style="display: none; margin-bottom: 20px; border-radius: 8px; overflow: hidden; border: 2px solid #ff9100;">
+    <video id="video-trailer" width="100%" height="315" controls></video>
+</div>
+
+
+
+
+            <div class="movie-synopsis">
+                <h3>Sinopse Oficial</h3>
+                <p id="info-plot">-</p>
+            </div>
+
+            <div class="movie-cinemas-section">
+                <h3>Onde Assistir & Preços</h3>
+                <div id="cinemas-list-container">
+                    <!-- Injetado pelo JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JANELA FLUTUANTE DE LOGIN -->
+    <div class="register-modal" id="login-modal">
+        <div class="modal-bg-overlay">
+            <div class="register-box">
+                <span class="close-modal" id="close-login">&times;</span>
+                <h3>Vamos começar? 😊</h3>
+                <p class="subtitle">Siga os passos e crie sua conta</p>
+                
+                <form class="register-form" id="meuFormulario">
+                    <div class="input-group">
+                        <input type="text" id="campoNome" placeholder="*Nome" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="campoCPF" placeholder="*CPF" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="campoCelular" placeholder="*Celular" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Continuar</button>
+                </form>
+
+                <div class="divider">Ou entre com uma rede social</div>
+                
+                <button class="btn-google" id="btn-google">
+                    <span class="g-icon">G</span> Continuar com o Google
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ PROFISSIONAL INTEGRADO -->
+    <footer class="footer-ingresso">
+        <div class="footer-ingresso-container">
+            <div class="footer-ingresso-links">
+                <div class="footer-col">
+                    <h4>Menu</h4>
+                    <a href="#">Filmes</a>
+                    <a href="#">Cinemas</a>
+                    <a href="#">Teatro</a>
+                    <a href="#">Eventos</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Institucional</h4>
+                    <a href="#">Quem Somos</a>
+                    <a href="#">Assessoria de Imprensa</a>
+                    <a href="#">Vale-Presente Corporativo</a>
+                    <a href="#">Faça parte do time</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Políticas</h4>
+                    <a href="#">Privacidade e Segurança</a>
+                    <a href="#">Meia-entrada</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chamadas dos scripts (Apenas uma vez cada) -->
+    <script src="dados.js"></script>
+    <script src="app.js"></script>
+    <script src="menu-links.js"></script>
+    <script src="cookies.js"></script>
+    <script src="busca.js"></script>
+    <script src="compra.js"></script>
+</body>

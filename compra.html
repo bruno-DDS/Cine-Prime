@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePrime - Comprar Ingressos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="compra.css">
+    <!-- NOVO: Estilos da Janela Flutuante do QR Code -->
+    <style>
+        .modal-qrcode {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            justify-content: center; align-items: center;
+        }
+        .box-qrcode {
+            background-color: #0b0518;
+            border: 2px solid #7c3aed;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.7);
+        }
+        .img-qrcode {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 20px auto;
+            width: 200px; height: 200px;
+            display: block;
+        }
+        .btn-fechar-ticket {
+            background: linear-gradient(90deg, #3b0764, #6d28d9);
+            color: white; border: 1px solid #7c3aed; padding: 12px 25px;
+            font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 15px; margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="compra-container">
+        <a href="index.html" class="btn-voltar-home">⬅ Voltar para a Home</a>
+        
+        <h1 class="titulo-compra">Finalizar Compra de Ingressos</h1>
+        <p class="subtitulo-compra">Selecione o local, sua idade e os assentos na sala.</p>
+
+        <div class="fluxo-compra-grid">
+            <!-- Formulário de Opções -->
+            <form id="form-compra-ingressos" class="form-dados">
+                
+                <div class="campo-grupo">
+                    <label for="selecao-cinema">📍 Escolha o Local (Cinema):</label>
+                    <select id="selecao-cinema" required>
+                        <option value="">Selecione um cinema...</option>
+                        <option value="UCI Anália Franco">UCI Anália Franco</option>
+                        <option value="Cinemark Paulista">Cinemark Paulista</option>
+                        <option value="Cinemark Tatuapé">Cinemark Tatuapé</option>
+                    </select>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="selecao-idade">👤 Sua Idade (Classificação Indicativa):</label>
+                    <input type="number" id="selecao-idade" min="1" max="120" placeholder="Ex: 18" required>
+                    <small class="aviso-classificacao" id="msg-idade-aviso"></small>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="tipo-ingresso">🎫 Tipo de Ingresso:</label>
+                    <select id="tipo-ingresso" required>
+                        <option value="24.00">Inteira - R$ 24,00</option>
+                        <option value="12.00">Meia-Entrada - R$ 12,00</option>
+                    </select>
+                </div>
+
+                <!-- Resumo financeiro -->
+                <div class="resumo-valores">
+                    <h3>Resumo do Pedido</h3>
+                    <p>Assentos Selecionados: <span id="resumo-assentos">Nenhum</span></p>
+                    <p class="preco-total">Total: R$ <span id="valor-total-pedido">0,00</span></p>
+                </div>
+
+                <button type="submit" class="btn-finalizar-compra">Confirmar Reserva</button>
+            </form>
+            <!-- Mapa de Assentos Interativo -->
+            <div class="mapa-sala-cinema">
+                <div class="tela-cinema">TELA DO CINEMA</div>
+                
+                <div class="grid-assentos" id="sala-assentos-grid">
+                    <!-- Gerado dinamicamente via JS -->
+                </div>
+
+                <div class="legenda-assentos">
+                    <div class="legenda-item"><span class="assento-exemplo"></span> Disponível</div>
+                    <div class="legenda-item"><span class="assento-exemplo selecionado"></span> Selecionado</div>
+                    <div class="legenda-item"><span class="assento-exemplo ocupado"></span> Ocupado</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOVO: JANELA FLUTUANTE DO TICKET COM QR CODE FICTÍCIO -->
+    <div class="modal-qrcode" id="modal-ingresso-sucesso">
+        <div class="box-qrcode">
+            <h2 style="color: #4ade80; margin-top: 0;">🎉 Compra Confirmada!</h2>
+            <p style="color: #cbd5e1; font-size: 14px;">Apresente o QR Code abaixo na entrada da sala do cinema.</p>
+            
+            <!-- Imagem gerada dinamicamente via API off-line do Google charts -->
+            <img src="" id="img-codigo-qr" class="img-qrcode" alt="QR Code do Ingresso">
+            
+            <div style="text-align: left; background: #050508; padding: 15px; border-radius: 6px; font-size: 13px; border: 1px solid #1e0b36;">
+                <p style="margin: 5px 0;"><strong>🍿 Local:</strong> <span id="ticket-cinema">-</span></p>
+                <p style="margin: 5px 0;"><strong>💺 Assentos:</strong> <span id="ticket-poltronas">-</span></p>
+                <p style="margin: 5px 0;"><strong>💰 Valor Pago:</strong> <span id="ticket-valor">-</span></p>
+            </div>
+            
+            <button class="btn-fechar-ticket" id="btn-fechar-ticket">Finalizar e Sair</button>
+        </div>
+    </div>
+
+    <script src="compra.js"></script>
+</body>
+</html>
