@@ -79,7 +79,7 @@ const API_CINE_PRIME = {
             "runtime": "169 min", "genre": "Aventura, Drama, Ficção", "director": "Christopher Nolan",
             "actors": "Matthew McConaughey, Anne Hathaway", "imdbRating": "8.7/10",
             "poster": "imagens/OIP (4).webp",
-            "trailerUrl": "imagens/vidssave.com Interestelar - Trailer Oficial 4 (dub) [HD] 720P.mp4",
+            "trailerUrl": "",
             "plot": "Uma equipe de exploradores viaja através de um buraco de minhoca no espaço em uma tentativa de garantir a sobrevivência da humanidade fora da Terra.",
             "cinemas": [{ "local": "Cinemark Tatuapé", "horarios": "19:00, 21:30", "preco": "R$ 25,00" }]
         },
@@ -91,7 +91,7 @@ const API_CINE_PRIME = {
             "runtime": "138 min", "genre": "Ação, Aventura, Ficção", "director": "J.J. Abrams",
             "actors": "Daisy Ridley, John Boyega", "imdbRating": "7.8/10",
             "poster": "imagens/star-wars-o-despertar-da-forca.download.jpg", // Sua capa
-            "trailerUrl": "imagens/Clipto AI video downloader_As Branquelas (2004) _ Trailer [Legendado].mp4",
+            "trailerUrl": "",
             "plot": "À medida que uma nova ameaça surge para o universo, Rey, uma catadora de lixo desértica, e Finn, um stormtrooper desertor, devem se unir a Han Solo e Chewbacca.",
             "cinemas": [{ "local": "Estreia em Breve", "horarios": "Breve nas salas", "preco": "--" }]
         },
@@ -101,7 +101,7 @@ const API_CINE_PRIME = {
             "runtime": "160 min", "genre": "Ação, Policial", "director": "Matt Reeves",
             "actors": "Robert Pattinson, Andy Serkis", "imdbRating": "Aguardando",
             "poster": "imagens/the-batman-2-fan-poster-by-cineskyedits-v0-pvi7jivg4pca1.webp", // Sua capa
-            "trailerUrl": "imagens/Clipto AI video downloader_As Branquelas (2004) _ Trailer [Legendado].mp4",
+            "trailerUrl": "",
             "plot": "A continuação da saga policial do Cavaleiro das Trevas defendendo as ruas corrompidas e inundadas de Gotham City contra novas ameaças.",
             "cinemas": [{ "local": "Estreia em Breve", "horarios": "Em breve", "preco": "--" }]
         },
@@ -110,7 +110,7 @@ const API_CINE_PRIME = {
             "runtime": "95 min", "genre": "Animação, Família", "director": "Andrew Stanton",
             "actors": "Tom Hanks, Tim Allen", "imdbRating": "Aguardando",
             "poster": "imagens/Cine1-9.jpg", // Sua capa
-            "trailerUrl": "imagens/Clipto AI video downloader_As Branquelas (2004) _ Trailer [Legendado].mp4",
+            "trailerUrl": "",
             "poster": "imagens/ts5_intl_payoff_peeking_b1_v4_c8ff8fd1.jpg", // Sua capa
             "plot": "Woody, Buzz e a gangue enfrentam o maior rival das brincadeiras modernas: os celulares, tablets e eletrônicos que prendem a atenção das crianças.",
             "cinemas": [{ "local": "Estreia em Breve", "horarios": "Em breve", "preco": "--" }]
@@ -120,7 +120,7 @@ const API_CINE_PRIME = {
             "runtime": "138 min", "genre": "Ação, Drama", "director": "Todd Phillips",
             "actors": "Joaquin Phoenix, Lady Gaga", "imdbRating": "5.3/10",
             "poster": "imagens/6fHZOiH81U4lyMVKvAQ2wcMMy6W.webp", // Sua capa
-            "trailerUrl": "imagens/Clipto AI video downloader_As Branquelas (2004) _ Trailer [Legendado].mp4",
+            "trailerUrl": "",
             "plot": "Arthur Fleck está institucionalizado em Arkham à espera de seu julgamento. Enquanto luta contra sua dupla identidade, ele encontra o amor verdadeiro.",
             "cinemas": [{ "local": "Estreia em Breve", "horarios": "Em breve", "preco": "--" }]
         },
@@ -129,7 +129,7 @@ const API_CINE_PRIME = {
             "runtime": "102 min", "genre": "Animação, Comédia, Família", "director": "Walt Dohrn",
             "actors": "Mike Myers, Eddie Murphy", "imdbRating": "Aguardando",
             "poster": "imagens/shrek_5_custom_poster_by_theanimationfan2007_dhrjkqz-pre.jpg", // Sua capa
-            "trailerUrl": "imagens/Clipto AI video downloader_As Branquelas (2004) _ Trailer [Legendado].mp4",
+            "trailerUrl": "",
             "plot": "O ogro mais famoso do cinema retorna para uma nova aventura ao lado do Burro, da Fiona e do Gato de Botas no reino de Tão Tão Distante.",
             "cinemas": [{ "local": "Estreia em Breve", "horarios": "Em breve", "preco": "--" }]
         },
@@ -138,7 +138,7 @@ const API_CINE_PRIME = {
             "runtime": "141 min", "genre": "Ação, Aventura, Crime", "director": "Louis Leterrier",
             "poster": "imagens/848a155842f8331062bd190b1584e3b152af0271468312ce6b0def838721592b.jpg", // Sua capa
             "actors": "Vin Diesel, Jason Momoa", "imdbRating": "5.7/10",
-            "trailerUrl": "imagens/Clipto AI video downloader_Velozes e Furiosos 10 _ Trailer [Dublado].mp4",
+            "trailerUrl": "",
             "plot": "Dom Toretto e sua família se tornam alvos do perigoso e vingativo Dante Reyes, filho de um antigo inimigo que ressurge das sombras determinado a destruir tudo o que Dom ama.",
             "cinemas": [{ "local": "UCI Anália Franco", "horarios": "14:15, 17:30, 20:45", "preco": "R$ 24,00" }]
         },
@@ -150,7 +150,7 @@ const API_CINE_PRIME = {
             "runtime": "114 min", "genre": "Comédia, Fantasia", "director": "Greta Gerwig",
             "actors": "Margot Robbie, Ryan Gosling", "imdbRating": "6.9/10",
             "poster": "imagens/Barbie-Movie-Wallpaper-5-768x1365.jpg", // Sua capa
-            "trailerUrl": "imagens/Clipto AI video downloader_As Branquelas (2004) _ Trailer [Legendado].mp4",
+            "trailerUrl": "",
             "plot": "Barbie começa a passar por uma crise existencial no seu mundo perfeito e precisa viajar até o Mundo Real ao lado de Ken para descobrir a verdade.",
             "cinemas": [{ "local": "UCI Jardim Sul", "horarios": "16:00, 20:30", "preco": "R$ 22,00" }]
         },
@@ -159,7 +159,7 @@ const API_CINE_PRIME = {
             "runtime": "92 min", "genre": "Animação, Aventura, Comédia", "director": "Aaron Horvath",
             "actors": "Chris Pratt, Anya Taylor-Joy", "imdbRating": "7.0/10",
             "poster": "imagens/super_mario_bros_filme_poster__81029lb0.jpeg", // Sua capa
-            "trailerUrl": "imagens/Clipto AI video downloader_As Branquelas (2004) _ Trailer [Legendado].mp4",
+            "trailerUrl": "4",
             "plot": "O encanador Mario viaja por um labirinto subterrâneo com seu irmão, Luigi, tentando salvar uma princesa capturada pelo vilão Bowser.",
             "cinemas": [{ "local": "Cinemark Central", "horarios": "13:30, 15:45", "preco": "R$ 24,00" }]
         },
@@ -168,7 +168,7 @@ const API_CINE_PRIME = {
             "runtime": "192 min", "genre": "Ação, Aventura, Ficção", "director": "James Cameron",
             "actors": "Sam Worthington, Zoe Saldaña", "imdbRating": "7.5/10",
             "poster": "imagens/2b695afb5fb7c65ba67496a851ac0563_XL.jpg", // Sua capa
-            "trailerUrl": "imagens/Clipto AI video downloader_As Branquelas (2004) _ Trailer [Legendado].mp4",
+            "trailerUrl": "",
             "plot": "Jake Sully vive com sua nova família formada no planeta Pandora. Uma antiga ameaça retorna, e ele deve liderar seu povo em uma batalha difícil.",
             "cinemas": [{ "local": "UCI Anália Franco", "horarios": "17:00, 21:00", "preco": "R$ 26,00" }]
         },
@@ -177,7 +177,7 @@ const API_CINE_PRIME = {
             "runtime": "110 min", "genre": "Terror, Mistério", "director": "Michael Chaves",
             "actors": "Taissa Farmiga, Jonas Bloquet", "imdbRating": "5.6/10",
             "poster": "imagens/72bbaf52899f312cdd854cc6a32c0ffbab3249c9163fea85e5e7550af9c87c15.jpg", // Sua capa
-            "trailerUrl": "imagens/Clipto AI video downloader_As Branquelas (2004) _ Trailer [Legendado].mp4",
+            "trailerUrl": "",
             "plot": "França, 1956. Um padre é assassinado. Um mal está se espalhando. A Irmã Irene mais uma vez fica cara a cara com a força demoníaca Valak.",
             "cinemas": [{ "local": "Cinemark Tatuapé", "horarios": "19:00, 21:30", "preco": "R$ 25,00" }]
         },
@@ -187,7 +187,7 @@ const API_CINE_PRIME = {
             "actors": "Shawn Wayans, Marlon Wayans", "imdbRating": "5.7/10",
             "poster": "imagens/aJZOcorpgloDLkPP6ED0t9sXjNu.webp", // Sua capa
         
-            "trailerUrl": "imagens/Clipto AI video downloader_As Branquelas (2004) _ Trailer [Legendado].mp4",
+            "trailerUrl": "",
             "plot": "Dois agentes negros do FBI falham em uma missão e são forçados a se disfarçar de duas herdeiras ricas e loiras para salvar seus empregos.",
             "cinemas": [{ "local": "Cinemark Tatuapé", "horarios": "18:45, 21:00", "preco": "R$ 24,00" }]
         },
@@ -196,7 +196,7 @@ const API_CINE_PRIME = {
             "runtime": "100 min", "genre": "Animação, Família, Fantasia", "director": "Henry Selick",
             "actors": "Dakota Fanning, Teri Hatcher", "imdbRating": "7.7/10",
             "poster": "imagens/poster-coraline-e-o-mundo-secreto-2009 (1).jpg", // Sua capa
-            "trailerUrl": "imagens/Clipto AI video downloader_As Branquelas (2004) _ Trailer [Legendado].mp4",
+            "trailerUrl": "",
             "plot": "Uma jovem descobre uma porta secreta que esconde um mundo paralelo assustadoramente semelhante ao dela, mas com segredos sombrios.",
             "cinemas": [{ "local": "Sessão Especial Animada", "horarios": "14:00", "preco": "R$ 21,00" }]
         }
